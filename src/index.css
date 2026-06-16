@@ -1,0 +1,106 @@
+/* ============================================================
+   NEXUS HUB — Design tokens & base
+   Hybrid premium palette: emerald trust (Dubai) + corporate blue
+   ============================================================ */
+:root {
+  /* Brand */
+  --primary: #0b6e4f; /* emerald — growth, prosperity, premium UAE */
+  --primary-deep: #084d38;
+  --primary-soft: #e7f6f1;
+  --secondary: #0057b8; /* corporate blue — trust */
+  --secondary-soft: #eaf3ff;
+  --accent: #13a37f; /* teal accent */
+  --accent-2: #2f80ed;
+
+  /* Neutrals */
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --surface-2: #f1f5f9;
+  --ink: #0f1f1a; /* deep green-black for dark panels */
+  --ink-2: #0a2a3a; /* deep blue-black */
+  --text: #1f2937;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --line-soft: #eef2f6;
+  --white: #ffffff;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(15, 31, 26, 0.04), 0 6px 16px rgba(11, 110, 79, 0.05);
+  --shadow-md: 0 10px 30px rgba(15, 31, 26, 0.08), 0 2px 8px rgba(15, 31, 26, 0.04);
+  --shadow-lg: 0 30px 70px rgba(8, 77, 56, 0.16), 0 10px 30px rgba(15, 31, 26, 0.1);
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  --maxw: 1200px;
+  --pad: clamp(20px, 5vw, 56px);
+
+  --fdisp: "Inter Tight", system-ui, sans-serif;
+  --fbody: "Inter", system-ui, sans-serif;
+
+  color-scheme: light;
+  font-family: var(--fbody);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fdisp);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
