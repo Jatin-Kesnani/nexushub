@@ -131,10 +131,19 @@
   transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
   border-bottom: 1px solid transparent;
 }
-.nav--scrolled {
-  background: rgba(255, 255, 255, 0.85);
+.nav--scrolled,
+.nav--open {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--line-soft);
+}
+/* When the mobile menu is open the bar is solid → use dark brand/burger.
+   Higher specificity (.nav.nav--open) so it beats the white default below. */
+.nav.nav--open .brand-name {
+  color: var(--text);
+}
+.nav--open .nav-burger {
+  background: var(--surface);
 }
 .nav-bar {
   display: flex;
@@ -198,22 +207,76 @@
   background: var(--text);
   border-radius: 2px;
 }
+/* Dropdown popup — sibling of the header (avoids the filtered-ancestor trap),
+   sits just under the bar as a contained rounded card. */
 .nav-mobile {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 70;
+  padding: 10px var(--pad) 0;
+  animation: navMenuIn 0.24s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.nav-mobile-inner {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 8px var(--pad) 20px;
-  margin: 0 calc(-1 * var(--pad));
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: saturate(140%) blur(14px);
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
+  background: #fff;
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  padding: 8px 16px 18px;
+  max-height: calc(100svh - 96px);
+  overflow-y: auto;
+}
+@keyframes navMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
 .nav-mobile a:not(.btn) {
-  padding: 12px 4px;
-  font-weight: 500;
+  padding: 15px 4px;
+  font-size: 16.5px;
+  font-weight: 600;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-mobile a:not(.btn):not(:last-of-type) {
   border-bottom: 1px solid var(--line-soft);
+}
+.nav-mobile a:not(.btn)::after {
+  content: "→";
+  color: var(--primary);
+  opacity: 0.5;
+}
+.nav-mobile .btn {
+  margin-top: 16px;
+}
+
+/* Hamburger → ✕ when open */
+.nav-burger span {
+  transition: transform 0.25s, opacity 0.2s;
+}
+.nav-burger.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-burger.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-mobile {
+    animation: none;
+  }
+  .nav-burger span {
+    transition: none;
+  }
 }
 
 /* ---------- Hero ---------- */
