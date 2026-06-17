@@ -4,17 +4,27 @@
 // Copy is intentionally minimal / scannable.
 // ============================================================
 
-// Premium imagery (Unsplash). Swap freely — kept in one place.
+// Premium imagery 
+import heroImg from "./assets/img/hero.jpg"; // Dubai skyline
+import taxImg from "./assets/img/tax.jpg"; // finance / filing
+import talentImg from "./assets/img/talent.jpg"; // team
+import missionImg from "./assets/img/mission.jpg"; // corporate tower
+import visionImg from "./assets/img/vision.jpg"; // Dubai marina
+import whyChooseImg from "./assets/img/why-choose.jpg"; // boardroom
+import valueIntegrityImg from "./assets/img/value-integrity.jpg"; // handshake
+import valueRigorImg from "./assets/img/value-rigor.jpg"; // analytics
+import valueInnovationImg from "./assets/img/value-innovation.jpg"; // modern Dubai
+
 export const IMG = {
-  hero: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80", // Dubai skyline
-  tax: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1100&q=80", // finance / filing
-  talent: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1100&q=80", // team
-  mission: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80", // corporate tower
-  vision: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=80", // Dubai marina
-  whyChoose: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80", // boardroom
-  valueIntegrity: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80", // handshake
-  valueRigor: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80", // analytics
-  valueInnovation: "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=900&q=80", // modern Dubai
+  hero: heroImg,
+  tax: taxImg,
+  talent: talentImg,
+  mission: missionImg,
+  vision: visionImg,
+  whyChoose: whyChooseImg,
+  valueIntegrity: valueIntegrityImg,
+  valueRigor: valueRigorImg,
+  valueInnovation: valueInnovationImg,
 };
 
 // Form routing — client fills these in.
